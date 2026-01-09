@@ -19,7 +19,8 @@ export default async function handler(req, res) {
         }
 
         const usuario = result.rows[0];
-        const valido = await bcrypt.compare(password, usuario.password);
+
+        const valido = await bcrypt.compare(password, usuario.contrasena);
 
         if (!valido) {
             return res.status(401).json({ error: "Contraseña incorrecta" });
@@ -29,13 +30,14 @@ export default async function handler(req, res) {
             success: true,
             usuario: {
                 id: usuario.id,
-                email: usuario.email
+                correo: usuario.correo
             }
         });
 
     } catch (err) {
-        console.error(err);
+        console.error("LOGIN ERROR:", err);
         return res.status(500).json({ error: "Error interno" });
     }
 }
+
 
