@@ -5,6 +5,7 @@ document.getElementById("btnTema").addEventListener("click", function () {
     document.documentElement.classList.toggle("dark");
 });
 
+/*
 function login() {
     const correo = "armandodiaz1020158@gmail.com";
     const contrasena = "1020158ad";
@@ -24,3 +25,4 @@ function login() {
     }
 
 }
+*/
