@@ -10,7 +10,7 @@ export default async function handler(req, res) {
         const { email, password } = req.body;
 
         const result = await db.execute({
-            sql: "SELECT * FROM usuarios WHERE email = ?",
+            sql: "SELECT * FROM usuario WHERE correo = ?",
             args: [email]
         });
 

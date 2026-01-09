@@ -73,8 +73,8 @@
   <script>
     document.getElementById("btnLogin").addEventListener("click", async () => {
 
-      const usuario = document.getElementById("usuario").value;
-      const contrasena = document.getElementById("contrasena").value;
+      const email = document.getElementById("usuario").value;
+      const password = document.getElementById("contrasena").value;
 
       const res = await fetch("/api/login", {
         method: "POST",
